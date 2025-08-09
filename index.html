@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Whiteboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="whiteboard-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">
+                    Whiteboard
+                </h1>
+                <div class="header-actions">
+                    <button id="saveBtn" class="btn btn-success">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7,10 12,15 17,10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        <span class="btn-text">Save</span>
+                    </button>
+                    <button id="clearBtn" class="btn btn-danger">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M1 4v6h6"/>
+                            <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
+                        </svg>
+                        <span class="btn-text">Clear</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Toolbar -->
+        <div class="toolbar">
+            <div class="toolbar-content">
+                <!-- Tool Selection -->
+                <div class="tool-group">
+                    <button id="penTool" class="tool-btn active" data-tool="pen">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </button>
+                    <button id="eraserTool" class="tool-btn" data-tool="eraser">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 20H8l-4-4 9.5-9.5a2.83 2.83 0 0 1 4 4L8 20"/>
+                            <path d="M16 16L4 4"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Color Palette -->
+                <div class="color-palette" id="colorPalette">
+                    <div class="color-option active" data-color="#2563eb" style="background-color: #2563eb;"></div>
+                    <div class="color-option" data-color="#dc2626" style="background-color: #dc2626;"></div>
+                    <div class="color-option" data-color="#16a34a" style="background-color: #16a34a;"></div>
+                    <div class="color-option" data-color="#ca8a04" style="background-color: #ca8a04;"></div>
+                    <div class="color-option" data-color="#7c3aed" style="background-color: #7c3aed;"></div>
+                    <div class="color-option" data-color="#ea580c" style="background-color: #ea580c;"></div>
+                    <div class="color-option" data-color="#0891b2" style="background-color: #0891b2;"></div>
+                    <div class="color-option" data-color="#be123c" style="background-color: #be123c;"></div>
+                    <div class="color-option" data-color="#374151" style="background-color: #374151;"></div>
+                    <div class="color-option" data-color="#000000" style="background-color: #000000;"></div>
+                </div>
+
+                <!-- Brush Size Controls -->
+                <div class="size-controls">
+                    <span class="size-label">Size:</span>
+                    <button id="decreaseSize" class="size-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
+                    </button>
+                    <div class="size-indicator">
+                        <div id="sizePreview" class="size-preview"></div>
+                    </div>
+                    <button id="increaseSize" class="size-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"/>
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
+                    </button>
+                    <span id="sizeValue" class="size-value">3px</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Canvas Container -->
+        <div class="canvas-container">
+            <canvas id="whiteboard" class="canvas"></canvas>
+        </div>
+
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="status-content">
+                <span id="toolStatus" class="status-text">
+                    Tool: <strong>Pen</strong> | Color: <span id="colorIndicator" class="color-indicator"></span>
+                </span>
+                <span class="status-text">Ready to draw • Use mouse or touch to create</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
