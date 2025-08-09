@@ -46,6 +46,6 @@ This project is licensed under the **MIT License** – you are free to use, modi
 
 ## 👨‍💻 Author
 
-**Your Name**
+**Chilukoti Venkata Sai Chandu**
 🔗 [GitHub]([https://github.com/your-username](https://github.com/chanduchilukoti512)) | 💼 [LinkedIn]([https://linkedin.com/in/your-profile](https://www.linkedin.com/in/chilukoti-venkata-sai-chandu/))
 
