@@ -1,7 +1,7 @@
 # 🖌️ Real-Time Collaborative Whiteboard
 
 A real-time collaborative whiteboard built using **HTML**, **CSS**, and **JavaScript**.  
-Perfect for brainstorming, teaching, sketching, and online collaboration.
+Perfect for brainstorming, teaching, sketching, and online collaboration. 
 
 ---
 
